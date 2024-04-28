@@ -1,5 +1,5 @@
 # minio-operator
-[![](https://github.com/Above-Os/minio-operator/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/Above-Os/minio-operator/actions/workflows/build.yaml)
+[![](https://github.com/beclab/minio-operator/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/beclab/minio-operator/actions/workflows/build.yaml)
 
 ## Description
 MinIO Operator provides a command line tool for the MinIO cluster maintenance. The Operator offers the `init`, `add node`, `add driver` commands to create a cluster and scale it to fulfill the different scenarios.
