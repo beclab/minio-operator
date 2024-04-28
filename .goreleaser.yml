@@ -1,0 +1,37 @@
+# Official documentation at http://goreleaser.com
+project_name: minio-operator
+builds:
+- env:
+  - CGO_ENABLED=0
+  main: ./cmd/main.go
+  binary: minio-operator
+  goarch:
+    - amd64
+    - arm64
+  goos:
+    - linux
+  tags:
+    containers_image_openpgp
+  ldflags:
+    - -w
+    - -s
+dist: bin
+archives:
+- name_template: "minio-operator-v{{ .Version }}-{{ .Os }}-{{ .Arch }}"
+  replacements:
+    linux: linux
+    amd64: amd64
+    arm64: arm64
+  files:
+    - none*
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Version }}-next-{{.ShortCommit}}"
+changelog:
+  skip: true
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'

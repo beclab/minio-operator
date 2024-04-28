@@ -1,0 +1,5 @@
+package server
+
+var (
+	NODE = ""
+)
